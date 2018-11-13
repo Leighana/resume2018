@@ -1,0 +1,443 @@
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* ------ Typography -------*/
+body{font-family: 'IBM Plex Sans Condensed', sans-serif;}
+
+/* ------ Fluid Images -------*/
+
+img {
+  max-width:100%;
+  margin: 0 auto;
+  display: flex;
+  align-content:center;
+}
+
+/* ------ Design Time Styles -------*/
+.container{
+  max-width:90%;
+  margin:0 auto;
+}
+
+/* ------ Global Styles -------*/
+body{
+  background:#073540;
+  color:#fff;
+  line-height:1.6
+} 
+a:link, a:visited{
+  color:#ccc;
+}
+
+.container{
+  margin:0 auto;
+  max-width:90%;
+  background:rgba(0,0,0,.15);
+}
+
+nav{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding:20px 20px 0px 20px;
+  font-family: 'Cinzel', serif;
+}
+nav a:link, nav a:visited{
+  border:1px solid #052930;
+  padding:8px 16px;
+  text-align:center;
+  text-decoration:none;
+  color:#222222;
+  text-transform:uppercase;
+  font-size:.75em;
+  background:#0D6B7F;
+  transition: background-color .5s ease;
+  color:#fff;
+}
+
+nav a:hover{
+   background: #14A0BF;
+}
+
+main{
+  padding: 1px 20px;
+}
+
+main h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  font-weight:400;
+  font-variant:small-caps;
+  font-family: 'Cinzel', serif;
+}
+main h1:before, main h1:after {
+  background-color: #14A0BF;
+  content: '\a0';
+  flex-grow: 1;
+  height: 1px;
+  position: relative;
+  top: 0.77em;
+}
+main h1:before {
+  margin-right:10px;
+}
+main h1:after {
+  margin-left:10px;
+}
+h2{
+  color: #fff;
+  font-size: 2em;
+  font-family: 'Cinzel', serif;
+}
+h3, h4{
+  font-family: 'Cinzel', serif;
+}
+
+dl{
+  display: grid;
+  grid-template: auto / 8em 1fr;
+}
+
+dt{
+  font-weight:800;
+  grid-column: 1;
+  padding: 10px 0;
+  border-bottom:1px solid #999;
+}
+dd{
+  margin:0;
+  grid-column: 2;
+  padding: 10px 0;
+  border-bottom:1px solid #999;
+ 
+}
+.related-links{
+  display:flex;
+  justify-content:center;
+  list-style:none;
+  padding:0;
+}
+.related-links .svg-inline--fa{
+  font-size:1.8em;
+  padding-top:7px;
+}
+
+.related-links a{
+  border:1px solid #052930;
+  padding:8px 16px;
+  text-align:center;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:.75em;
+  background:#0D6A7F;
+  transition: background-color 0.5s ease;
+  color:#fff;
+}
+
+.related-links a:hover{
+  background:#14A0BF;
+}
+
+.related-links li{
+  margin-right:20px;
+}
+
+#skills{
+  
+}
+#skills li{
+  list-style-type:square;
+  float: left;
+  margin-right: 10%;
+  width: 40%;
+}
+
+
+.job, .certificate{
+  border-bottom:1px solid #999;
+  padding-bottom:20px;
+}
+
+.job *[itemprop="jobTitle"], 
+.job *[itemprop="name"], 
+.job *[itemprop="url"], 
+.job *[itemprop="addressLocality"],
+.certificate *[itemprop="name"]
+{
+  display:block;
+}
+
+.job h3{
+  margin:20px 0 20px 0;
+}
+.job img, .certificate img{
+  box-sizing: border-box;
+  max-width: 90%;
+  padding: 20px 20px;
+}
+
+.objective{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+footer{
+  text-align:center;
+  padding:20px 0;
+}
+
+/* ---- Bottom Nav----- */
+nav.foot {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding:20px 20px 0px 20px;
+  font-family: 'Cinzel', serif;
+}
+nav.foot a:link, nav.foot a:visited{
+  border:1px solid #052930;
+  padding:8px 16px;
+  text-align:center;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:.75em;
+  background:#0D6B7F;
+  transition: background-color .5s ease;
+  color:#fff;
+}
+
+nav.foot a:hover{
+   background: #14A0BF;
+}
+
+/* ------ Helper Classes -------*/
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+
+/* Reorder Source Using Grid    for mobile */
+
+main.container{
+  display: grid;
+  grid-gap: 1em;
+  grid-template-areas:
+    "title"
+    "bio"
+    "objective"
+    "related"
+    "about"
+    "education"
+    "experience"
+    "skills"
+    "nav";
+}
+
+.page-title{
+  grid-area: title;
+}
+#bio{
+  grid-area: bio;
+}
+#objective{
+  grid-area:objective;
+}
+#related{
+  grid-area:related;
+}
+#about{
+  grid-area: about;
+}
+#education{
+  grid-area: education;
+}
+#experience{
+  grid-area: experience;
+}
+#skills{
+  grid-area: skills;
+}
+#nav{
+  grid-area: nav;
+  padding-bottom: 50px;
+}
+ 
+
+
+
+
+/*----------------------Media Queries-----------------------*/
+
+
+/* ---  Tablet ---- */
+@media only screen and (min-width: 768px) {
+  main.container {
+    /*max-width:900px;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+    grid-template-areas:
+      "title title"
+      "bio related"
+      "bio objective"
+      "skills about"
+      "experience experience"
+      "education education"
+      "nav nav";
+  }
+.page-title{
+  grid-area: title;
+}
+#bio{
+  grid-area: bio;
+}
+#objective{
+  grid-area:objective;
+}
+#related{
+  padding-top: 30px;
+  grid-area:related;
+}
+#about{
+  grid-area: about;
+  grid-grow;
+}
+#education{
+  grid-area: education;
+}
+#experience{
+  grid-area: experience;
+}
+#skills{
+  grid-area: skills;
+  margin-left: 10px;
+}
+#nav{
+  grid-area: nav;
+  padding-bottom: 50px;
+  max-width: 100%;
+  
+}
+
+  header.container{
+    max-width:90%;
+  }
+
+.objective{
+  grid-area:objective;
+  border-bottom:1px solid #999;
+  padding-bottom:60px;
+  font-size:1.5em;
+}
+.related-links{
+  grid-area:related;
+  border-bottom:1px solid #999;
+  padding-bottom:50px
+}
+
+h1{
+  font-size: 3em;
+}
+
+.job img, .certificate img{
+  box-sizing: border-box;
+  max-width: 45%;
+  padding: 20px 20px;
+  float: right;
+  clear: both;
+}
+
+/* Desktops and laptops ----------- */
+/* Styles */
+@media only screen  and (min-width : 1024px) {
+main.container{
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+    grid-template-areas:
+      "title title"
+      "bio skills"
+      "related about"
+      "objective about"
+      "experience experience"
+      "education education"
+      "nav nav";
+  }
+.page-title{
+  grid-area: title;
+}
+#bio{
+  grid-area: bio;
+}
+#objective{
+  grid-area:objective;
+}
+#related{
+  padding-top: 30px;
+  grid-area:related;
+}
+#about{
+  grid-area: about;
+  grid-grow;
+}
+#education{
+  grid-area: education;
+}
+#experience{
+  grid-area: experience;
+}
+#skills{
+  grid-area: skills;
+  margin-left: 10px;
+}
+#nav{
+  grid-area: nav;
+  padding-bottom: 50px;
+  max-width: 100%;
+  
+}
+
+  header.container{
+    max-width:90%;
+  }
+
+.objective{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+} 
+ 
+ .certificate img{
+  box-sizing: border-box;
+  max-width: 45%;
+  padding: 20px 20px;
+  margin-bottom: 60px;
+  float: right;
+  clear: both; 
+}
+
+.certificate {
+  padding-bottom: 90px;
+}
+/*----------------------Edge Case Tweaks-----------------------
+*/
+@media only screen and (max-width: 450px) {
+  .related-links li a svg{display:none;}
+}
